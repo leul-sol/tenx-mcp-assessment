@@ -2,7 +2,9 @@
 
 ## Your GitHub repository link
 
-**Submit a public GitHub repository link** so that your work can be viewed. The repo should contain the artifacts listed below.
+**Repository link for submission:** https://github.com/leul-sol/tenx-mcp-assessment
+
+The repo is public and contains all required artifacts (see below).
 
 ---
 
