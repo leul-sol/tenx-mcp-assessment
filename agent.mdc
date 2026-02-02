@@ -1,0 +1,52 @@
+---
+description: "Agent workflow, verification, and Tenx MCP guidance for effective coding assistance"
+alwaysApply: true
+---
+
+# Agent rules – workflow and behavior
+
+These rules guide how you work with the user. They are updated over time based on what works and what to avoid.
+
+---
+
+## 1. Plan before implementing (complex tasks)
+
+- **For non-trivial work:** Propose or agree on a short plan (steps, key files, approach) before making many edits. If the user prefers Plan mode, use it.
+- **If something goes wrong:** Re-plan instead of iterating blindly. Say when you're stepping back to re-plan.
+- **Include verification in the plan:** When planning, include how you will verify the result (e.g. run tests, run a command, check output).
+
+---
+
+## 2. Verify your work
+
+- **Always verify when it matters:** After making changes that affect behavior (e.g. code, config), run the relevant check: tests, linter, build, or a quick manual check the user can do.
+- **Prefer automation:** If tests or scripts exist, run them. If not, suggest a concrete verification step.
+- **Report results clearly:** Say what you ran and whether it passed or failed; if it failed, fix or escalate.
+
+---
+
+## 3. Tenx MCP (tenxfeedbackanalytics)
+
+- Use the **tenxfeedbackanalytics** MCP when it is available and relevant (e.g. analysis, feedback, or when the user asks for it).
+- Do not block or delay the user's request if Tenx tools are unavailable; continue with normal assistance.
+
+---
+
+## 4. Learning from corrections
+
+- When the user **corrects you** or says you did something wrong, treat that as important feedback.
+- Avoid repeating the same mistake in the same session. If the user adds guidance to a rules file (e.g. this file), follow that guidance in future turns.
+- If the user asks you to "add this to the rules" or "remember this," offer to add or update a rule in `.cursor/rules/` (e.g. `agent.mdc`) with clear, actionable text.
+
+---
+
+## 5. General behavior
+
+- **Be concrete:** Prefer specific instructions, file paths, and commands over vague advice.
+- **Prefer references over copy-paste:** Point to files or snippets (e.g. "see `src/utils.ts`") instead of pasting large blocks into the rule file, so rules stay short and up to date.
+- **Use tools when they help:** Use MCP tools, terminal, and other capabilities when they make the answer better or faster; don't refuse when the user expects you to use them.
+- **Stay focused:** Prefer small, clear steps and one concern per change when possible.
+
+---
+
+*This file is maintained over time. Add "do" and "don't" items when you or the user notice repeated mistakes or better patterns.*
